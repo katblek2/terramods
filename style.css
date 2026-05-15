@@ -37,7 +37,7 @@ body, html {
 /* Основной контент (Коричневый блок) */
 .content {
   flex: 5;
-  background-image: url(arts/Underground_background_4.png); 
+  background-image: url(Underground_background_4.png); 
   background-size: cover;       /* Растягивает картинку под размер блока */
   background-position: center;  /* Центрирует изображение */
   background-repeat: no-repeat; /* Запрещает повторение */
