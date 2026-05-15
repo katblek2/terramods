@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terramods</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <h1>Terraria mods</h1>
+    </header>
+
+    <div class="main-wrapper">
+        <main class="content">
+            <!-- Внутренний блок для скролла -->
+            <div class="scroll-block">
+                <div class="text-line"data-utility="10" data-hardcore="2" data-new="4"><img src="arts/AlchemistNPCLite.png" alt="icon" class="prefix-icon">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2599842771" class="content-text">AlchemistNPC Lite</a></div>
+                <div class="text-line"data-utility="2" data-hardcore="9" data-new="10"><img src="arts/CalamityMod.png" class="prefix-icon">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2824688072" class="content-text">Calamity Mod</a></div>
+                <div class="text-line"data-utility="3" data-hardcore="4" data-new="9"><img src="arts/ThoriumMod.png" class="prefix-icon">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2909886416" class="content-text">Thorium Mod</a></div>
+                <div class="text-line"data-utility="9" data-hardcore="1" data-new="2"><img src="arts/MagicStorage.png" class="prefix-icon">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2563309347" class="content-text">Magic Storage</a></div>
+                <div class="text-line"data-utility="6" data-hardcore="8" data-new="8"><img src="arts/Fargo'sSoulsMod.png" class="prefix-icon">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2815540735" class="content-text">Fargo's Souls Mod</a></div>
+                <div class="text-line"data-utility="8" data-hardcore="0" data-new="0"><img src="arts/RecipeBrowser.png" class="prefix-icon">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2619954303" class="content-text">Recipe Browser</a></div>
+                <div class="text-line"data-utility="7" data-hardcore="0" data-new="1"><img src="arts/BossChecklist.png" class="prefix-icon">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2669644269" class="content-text">Boss Checklist</a></div>
+                <div class="text-line"data-utility="9" data-hardcore="-2" data-new="0"><img src="arts/WingsSlot.png" class="prefix-icon">
+                    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2942702352"  class="content-text"> Wings Slot</a></div>
+                
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <nav class="menu">
+                <a href="#" id="sort-utility"class="menu-link">Упрощение жизни</a>
+                <a href="#" id="sort-hardcore"class="menu-link">Хардкор</a>
+                <a href="#" id="sort-new"class="menu-link">Новые штуки</a>
+            </nav>
+        </aside>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+function sortMods(attribute) {
+    const container = document.querySelector('.scroll-block');
+    const items = Array.from(container.querySelectorAll('.text-line'));
+
+    // Сортировка: от большего к меньшему
+    items.sort((a, b) => {
+        return b.getAttribute(attribute) - a.getAttribute(attribute);
+    });
+    container.innerHTML = '';
+    items.forEach(item => container.appendChild(item));
+}
+// Привязываем функции к кнопкам
+document.getElementById('sort-utility').onclick = () => sortMods('data-utility');
+document.getElementById('sort-hardcore').onclick = () => sortMods('data-hardcore');
+document.getElementById('sort-new').onclick = () => sortMods('data-new');
+</script>
